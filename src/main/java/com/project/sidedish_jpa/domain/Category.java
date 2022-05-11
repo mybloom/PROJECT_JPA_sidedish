@@ -29,4 +29,6 @@ public class Category {
 
 	private boolean isExhibition ;
 
+	@OneToMany(mappedBy = "category")
+	private List<CategorySidedish> categorySidedishes = new ArrayList<>();
 }

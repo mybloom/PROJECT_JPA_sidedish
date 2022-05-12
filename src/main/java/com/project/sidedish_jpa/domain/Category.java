@@ -21,6 +21,9 @@ public class Category {
 
 	private String title;
 
+	/*
+		그러고보니 @Column 설정하지 않아도 자동으로 "parent_category_id"로 컬럼명 생성됨.
+	 */
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "parent_category_id")
 	private Category parent;

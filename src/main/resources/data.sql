@@ -1,7 +1,7 @@
 /* # category */
 /* ## 최상위 category*/
 insert into category(category_id, title, parent_category_id)
-values(1, '메인요리',null), (2, '메인요리',null),(3, '메인요리',null);
+values(1, '메인요리',null), (2, '국물요리',null),(3, '밑반찬',null);
 
 /*## 하위 category*/
 insert into category(category_id, title, parent_category_id)

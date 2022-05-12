@@ -10,8 +10,9 @@ import lombok.Setter;
 @Setter
 public class BaseCreateModify {
 
-	private String createdBy;
 	private LocalDateTime createdDate;
-	private String modifiedBy;
+	private String createdBy;
+
 	private LocalDateTime modifiedDate;
+	private String modifiedBy;
 }

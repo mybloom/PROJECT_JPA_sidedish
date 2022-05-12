@@ -1,7 +1,8 @@
-package com.project.sidedish_jpa.repository;
+package com.project.sidedish_jpa.jpatest.repository;
 
 
 import com.project.sidedish_jpa.domain.Category;
+import com.project.sidedish_jpa.repository.CategoryRepository;
 import java.util.List;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;

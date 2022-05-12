@@ -28,7 +28,8 @@ public class Category {
 	@OneToMany(mappedBy = "parent")
 	private List<Category> child = new ArrayList<>();
 
-	private boolean isExhibition ;
+	//기획전은 현재 스크럼에서 스펙아웃
+//	private boolean isExhibition ;
 
 	@OneToMany(mappedBy = "category")
 	private List<CategorySidedish> categorySidedishes = new ArrayList<>();

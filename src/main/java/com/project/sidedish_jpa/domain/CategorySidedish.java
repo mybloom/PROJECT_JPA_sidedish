@@ -1,6 +1,7 @@
 package com.project.sidedish_jpa.domain;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -13,11 +14,11 @@ public class CategorySidedish extends BaseCreateModify{
 	@GeneratedValue
 	private Long id;
 
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "category_id")
 	private Category category;
 
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "sidedish_id")
 	private Sidedish sidedish;
 

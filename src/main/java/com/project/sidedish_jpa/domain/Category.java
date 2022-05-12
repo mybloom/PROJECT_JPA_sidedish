@@ -10,8 +10,10 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import lombok.Getter;
 
 @Entity
+@Getter
 public class Category {
 
 	@Id
@@ -36,4 +38,13 @@ public class Category {
 
 	@OneToMany(mappedBy = "category")
 	private List<CategorySidedish> categorySidedishes = new ArrayList<>();
+
+	@Override
+	public String toString() {
+		return "Category{" +
+			"id=" + id +
+			", title='" + title + '\'' +
+			", parent=" + parent +
+			'}';
+	}
 }

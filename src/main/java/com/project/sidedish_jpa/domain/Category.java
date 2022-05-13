@@ -36,8 +36,8 @@ public class Category {
 	//기획전은 현재 스크럼에서 스펙아웃
 //	private boolean isExhibition ;
 
-	@OneToMany(mappedBy = "category")
-	private List<CategorySidedish> categorySidedishes = new ArrayList<>();
+	/*@OneToMany(mappedBy = "category")
+	private List<CategorySidedish> categorySidedishes = new ArrayList<>();*/
 
 	@Override
 	public String toString() {

@@ -14,12 +14,15 @@ public class CategorySidedish extends BaseCreateModify{
 	@GeneratedValue
 	private Long id;
 
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "category_id")
-	private Category category;
+//	@ManyToOne(fetch = FetchType.LAZY)
+//	@JoinColumn(name = "category_id")
+//	private Category category;
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "sidedish_id")
 	private Sidedish sidedish;
 
+	//이거 써보기 정상혁 우아한 crud 40분 경
+	//참조타입을 알수있도록 아이디어 주는 것 
+//	private Association<Category> categoryId;
 }

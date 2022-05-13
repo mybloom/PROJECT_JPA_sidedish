@@ -16,10 +16,12 @@ public class SidedishImage {
 	@Column(name = "sidedish_image_id")
 	private Long id;
 
-	private String name;
+//	private String name;
 
+	@Column(name = "image_url")
 	private String url;
 
+	@Column(name = "image_sequence")
 	private int sequence;
 
 	@ManyToOne(fetch = FetchType.LAZY)

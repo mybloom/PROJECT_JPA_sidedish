@@ -1,4 +1,4 @@
-package com.project.sidedish_jpa.domain;
+package com.project.sidedish_jpa.sidedish;
 
 import java.util.ArrayList;
 import java.util.List;

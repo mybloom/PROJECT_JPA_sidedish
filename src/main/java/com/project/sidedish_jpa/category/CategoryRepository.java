@@ -1,6 +1,5 @@
-package com.project.sidedish_jpa.repository;
+package com.project.sidedish_jpa.category;
 
-import com.project.sidedish_jpa.domain.Category;
 import java.util.List;
 import javax.persistence.EntityManager;
 import lombok.RequiredArgsConstructor;

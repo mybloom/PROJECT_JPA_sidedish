@@ -1,4 +1,4 @@
-package com.project.sidedish_jpa.domain;
+package com.project.sidedish_jpa.sidedish;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;

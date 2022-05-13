@@ -2,6 +2,7 @@ package com.project.sidedish_jpa.sidedish;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -12,6 +13,7 @@ public class Sidedish {
 
 	@Id
 	@GeneratedValue
+	@Column(name = "sidedish_id")
 	private Long id;
 
 	private String name;

@@ -1,5 +1,6 @@
 package com.project.sidedish_jpa.sidedish;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -12,6 +13,7 @@ public class SidedishImage {
 
 	@Id
 	@GeneratedValue
+	@Column(name = "sidedish_image_id")
 	private Long id;
 
 	private String name;

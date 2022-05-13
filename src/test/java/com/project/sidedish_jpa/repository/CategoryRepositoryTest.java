@@ -1,23 +1,47 @@
 package com.project.sidedish_jpa.repository;
 
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 import com.project.sidedish_jpa.domain.Category;
 import java.util.List;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.springframework.test.context.TestPropertySource;
 import org.springframework.transaction.annotation.Transactional;
 
-@ExtendWith(SpringExtension.class)
+
+
+//@SpringBootTest(
+//	webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT
+//	, properties = "spring.profiles.active=testrun"
+//)
+//@ActiveProfiles("testrun")
+//@PropertySource("classpath:application-testrun.yml")
+@TestPropertySource(properties = { "spring.config.location=classpath:application-testrun.yml" })
 @SpringBootTest
 class CategoryRepositoryTest {
 
+	private static final Logger log = LoggerFactory.getLogger(CategoryRepositoryTest.class);
+
 	@Autowired
 	CategoryRepository categoryRepository;
+
+//	/**
+//	 * setUp() 메서드는 실행되었으나 data-test.sql은 실행되지 않았다.
+//	 * @Sql({"classpath:data-test.sql"}) 에 classpath 없애도 마찬가지
+//	 * 그래서 테스트 실패.
+//	 */
+//	@BeforeEach
+//	@Sql({"classpath:data-test.sql"})
+//	void setUp() {
+//		log.debug("***실행됨");
+//	}
+
 
 	/*
 	 TODO
@@ -37,7 +61,8 @@ class CategoryRepositoryTest {
 		List<Category> categoryList = categoryRepository.findAll();
 
 		//then
-		Assertions.assertThat(categoryList).hasSize(6).anyMatch(category -> category.getTitle() != null);
+		assertThat(categoryList).hasSize(6)
+			.anyMatch(category -> category.getParent().getTitle().contains("_테스트"));
 
 		//삭제 할 부분
 		for (Category category : categoryList) {

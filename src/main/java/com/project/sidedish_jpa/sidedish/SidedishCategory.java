@@ -9,7 +9,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class CategorySidedish extends BaseCreateModify {
+public class SidedishCategory extends BaseCreateModify {
 
 	@Id
 	@GeneratedValue

@@ -187,3 +187,26 @@ INSERT INTO sidedish_image (sidedish_image_id, image_sequence, image_url, sidedi
 VALUES(57,3,'https://imgur.com/a/kPivzgc',19);
 
 /*## Sidedish_Category*/
+INSERT INTO sidedish_category (sidedish_category_id, category_id, sidedish_id)
+VALUES
+    (1,4,1),
+    (2,4,2),
+    (3,4,3),
+    (4,4,4),
+    (5,5,5),
+    (6,5,6),
+    (7,6,7),
+    (8,6,8),
+    (9,6,9),
+    (10,6,10),
+    (11,7,11),
+    (12,7,12),
+    (13,7,13),
+    (14,8,14),
+    (15,8,15),
+    (16,8,16),
+    (17,9,17),
+    (18,9,18),
+    (19,9,19);
+
+

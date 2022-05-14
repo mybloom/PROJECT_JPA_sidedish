@@ -11,11 +11,11 @@ public class SidedishRepository {
 
 	private final EntityManager entityManager;
 
-	public List<Sidedish> findAllByCategoryId(Long categoryId) {
+	public List<Sidedish> findAllBySubCategoryId(Long categoryId) {
 		String jpql = "select s "
 			+ "from Sidedish s "
 			+ "join s.sidedishCategories sc "
-			+ "where s.categoryId = :categoryId";
+			+ "where sc.categoryId = :categoryId";
 
 		return entityManager.createQuery(jpql, Sidedish.class)
 			.setParameter("categoryId" , categoryId)

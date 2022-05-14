@@ -77,6 +77,50 @@ class SidedishRepositoryTest {
 //		}
 	}
 
+	/**
+	 * 발생쿼리 와 특이한 점 : N+1 쿼리 발생 
+	 * <p>
+	 * 	- findAllBySubCategoryId은 조인쿼리인데 객체 그래프 탐색을 하면 해당 테이블에서 select를 N번 더 한다.
+	 * 	- 이유는 이미 알고 있지만 해결방법이 궁금하다. 아니면 원래 이렇게 써야 하는 것인지
+	 * 	쿼리를 수행하면 SidedishCategory의 category_id가 있기 때문에 바로 확인할 수 있으나
+	 * 	객체에는 sidedishCategories의 get(index)를 통해서 categoryId를 가져와야 한다.
+	 * 	이 과정에서 다시 한번 SidedishCategory 를 select하는 과정이 이루어지는데, 그게 왜 되야만 하는지 모르겠다.
+	 * 	- join으로 연관객체의 데이터까지 한방 쿼리를 사용할 때는 lazy로딩도 즉시로딩이 되어야 하는것 아닌가?
+	 * 	이 부분은 다시 찾아보자.
+	 *
+	 * 	- sidedishRepository.findAllBySubCategoryId(4L) 수행 쿼리(join)
+	 * 	    select
+	 *         sidedish0_.sidedish_id as sidedish1_1_,
+	 *         sidedish0_.category_id as category2_1_,
+	 *         sidedish0_.description as descript3_1_,
+	 *         sidedish0_.name as name4_1_,
+	 *         sidedish0_.price as price5_1_,
+	 *         sidedish0_.stock_quantity as stock_qu6_1_
+	 *     from
+	 *         sidedish sidedish0_
+	 *     inner join
+	 *         sidedish_category sidedishca1_
+	 *             on sidedish0_.sidedish_id=sidedishca1_.sidedish_id
+	 *     where
+	 *         sidedishca1_.category_id=?
+	 *
+	 * 	- sidedish.getSidedishCategories().get(0) 시 수행쿼리
+	 * 	    select
+	 *         sidedishca0_.sidedish_id as sidedish7_2_0_,
+	 *         sidedishca0_.sidedish_category_id as sidedish1_2_0_,
+	 *         sidedishca0_.sidedish_category_id as sidedish1_2_1_,
+	 *         sidedishca0_.created_by as created_2_2_1_,
+	 *         sidedishca0_.created_date as created_3_2_1_,
+	 *         sidedishca0_.modified_by as modified4_2_1_,
+	 *         sidedishca0_.modified_date as modified5_2_1_,
+	 *         sidedishca0_.category_id as category6_2_1_,
+	 *         sidedishca0_.sidedish_id as sidedish7_2_1_
+	 *     from
+	 *         sidedish_category sidedishca0_
+	 *     where
+	 *         sidedishca0_.sidedish_id=?
+	 * </p>
+	 */
 	@Test
 	@DisplayName("선택한 하위 카테고리에 대한 반찬목록 조회")
 	void selectSidedishListBySubCategoryId() {

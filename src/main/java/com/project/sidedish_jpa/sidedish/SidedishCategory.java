@@ -8,8 +8,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import lombok.Getter;
 
 @Entity
+@Getter
 public class SidedishCategory extends BaseCreateModify {
 
 	@Id
@@ -27,4 +29,12 @@ public class SidedishCategory extends BaseCreateModify {
 	@JoinColumn(name = "sidedish_id")
 	private Sidedish sidedish;
 
+	@Override
+	public String toString() {
+		return "SidedishCategory{" +
+			"id=" + id +
+			", categoryId=" + categoryId +
+			", sidedish=" + sidedish +
+			'}';
+	}
 }

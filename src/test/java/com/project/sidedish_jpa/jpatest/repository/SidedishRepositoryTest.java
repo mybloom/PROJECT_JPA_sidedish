@@ -3,7 +3,6 @@ package com.project.sidedish_jpa.jpatest.repository;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import com.project.sidedish_jpa.sidedish.Sidedish;
-import com.project.sidedish_jpa.sidedish.SidedishCategory;
 import com.project.sidedish_jpa.sidedish.SidedishRepository;
 import java.util.List;
 import org.junit.jupiter.api.DisplayName;
@@ -66,35 +65,34 @@ class SidedishRepositoryTest {
 		List<Sidedish> sidedishes = sidedishRepository.findAll();
 
 		//then
-		assertThat(sidedishes).hasSize(4)
+		assertThat(sidedishes).hasSize(19)
 			.anyMatch(sidedish -> sidedish.getSidedishCategories().get(0).getCategoryId() != null);
 
-		for (Sidedish sidedish : sidedishes) {
-			System.out.println("^^^^" + sidedish.toString());
-			List<SidedishCategory> sidedishCategories = sidedish.getSidedishCategories();
-			for (SidedishCategory sidedishCategory : sidedishCategories) {
-				System.out.println("****"+ sidedishCategory.toString());
-			}
-		}
+//		for (Sidedish sidedish : sidedishes) {
+//			System.out.println("^^^^" + sidedish.toString());
+//			List<SidedishCategory> sidedishCategories = sidedish.getSidedishCategories();
+//			for (SidedishCategory sidedishCategory : sidedishCategories) {
+//				System.out.println("****"+ sidedishCategory.toString());
+//			}
+//		}
 	}
 
-//	@Test
-//	@DisplayName("선택한 하위 카테고리에 대한 반찬목록 조회")
-//	void selectSidedishListBySubCategoryId() {
-//		//given
-//
-//		//when
-//		List<Sidedish> findSidedishes = sidedishRepository.findAllByCategoryId(4L);
-//
-//		//then
-//		assertThat(findSidedishes).hasSize(4)
-//			.anyMatch(sidedish -> sidedish.getCategoryId() == 4);
-////			.anyMatch(sidedish -> sidedish.getSidedishCategories().get(0).get);
-//
-//		for (Sidedish findSidedish : findSidedishes) {
-//			System.out.println(findSidedish.toString());
-//		}
-//	}
+	@Test
+	@DisplayName("선택한 하위 카테고리에 대한 반찬목록 조회")
+	void selectSidedishListBySubCategoryId() {
+		//given
+
+		//when
+		List<Sidedish> findSidedishes = sidedishRepository.findAllBySubCategoryId(4L);
+
+		//then
+		assertThat(findSidedishes).hasSize(4)
+			.anyMatch(sidedish -> sidedish.getSidedishCategories().get(0).getCategoryId() == 4);
+
+		for (Sidedish findSidedish : findSidedishes) {
+			System.out.println(findSidedish.toString());
+		}
+	}
 
 
 }

@@ -11,11 +11,23 @@ public class SidedishRepository {
 
 	private final EntityManager entityManager;
 
-	public List<Sidedish> findAllByCategoryId() {
-		String jpql = "";
+	public List<Sidedish> findAllByCategoryId(Long categoryId) {
+		String jpql = "select s "
+			+ "from Sidedish s "
+			+ "join s.sidedishCategories sc "
+			+ "where s.categoryId = :categoryId";
+
+		return entityManager.createQuery(jpql, Sidedish.class)
+			.setParameter("categoryId" , categoryId)
+			.getResultList();
+	}
+
+	public List<Sidedish> findAll() {
+		String jpql = "select s from Sidedish s";
 
 		return entityManager.createQuery(jpql, Sidedish.class)
 			.getResultList();
 	}
+
 
 }

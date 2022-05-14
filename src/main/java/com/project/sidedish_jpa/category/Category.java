@@ -1,4 +1,4 @@
-package com.project.sidedish_jpa.domain;
+package com.project.sidedish_jpa.category;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,11 +33,10 @@ public class Category {
 	@OneToMany(mappedBy = "parent")
 	private List<Category> child = new ArrayList<>();
 
-	//기획전은 현재 스크럼에서 스펙아웃
-//	private boolean isExhibition ;
-
 	/*@OneToMany(mappedBy = "category")
 	private List<CategorySidedish> categorySidedishes = new ArrayList<>();*/
+
+	private Long sidedishId;
 
 	@Override
 	public String toString() {

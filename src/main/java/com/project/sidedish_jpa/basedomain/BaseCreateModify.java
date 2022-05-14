@@ -1,4 +1,4 @@
-package com.project.sidedish_jpa.domain;
+package com.project.sidedish_jpa.basedomain;
 
 import java.time.LocalDateTime;
 import javax.persistence.MappedSuperclass;

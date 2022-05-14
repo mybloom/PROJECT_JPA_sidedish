@@ -58,7 +58,7 @@ class SidedishRepositoryTest {
 	 * </p>
 	 */
 	@Test
-	@DisplayName("SidedishCategory 테이블 전체내용 조회")
+	@DisplayName("SidedishCategory 테이블 전체내용 조회_SidedishCategory 엔티티 객체 그래프 탐색이 잘되는 지 확인하기 위한")
 	void selectSidedishCategoryAll() {
 		//given
 

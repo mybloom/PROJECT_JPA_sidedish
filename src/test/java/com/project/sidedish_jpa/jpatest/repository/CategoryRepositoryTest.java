@@ -81,7 +81,7 @@ class CategoryRepositoryTest {
 		List<Category> categories = categoryRepository.findSubCategoryIdByParentId(1L);
 
 		//then
-		assertThat(categories).hasSize(2)
+		assertThat(categories).hasSize(1)
 			.anyMatch(category -> category.getChild().get(0).getParent().getId() == 1);
 
 		for (Category category : categories) {

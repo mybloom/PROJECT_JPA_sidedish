@@ -34,7 +34,7 @@ public class CategoryRepository {
 	 * @return
 	 */
 	public List<Category> findSubCategoryIdByParentId(Long parentCategoryId){
-		String jpql = "select p "
+		String jpql = "select distinct p "
 			+ "from Category p "
 			+ "join fetch p.child c "
 			+ "where p.id = : parentCategoryId";

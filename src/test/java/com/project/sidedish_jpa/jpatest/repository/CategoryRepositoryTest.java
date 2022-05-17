@@ -81,6 +81,6 @@ class CategoryRepositoryTest {
 
 		//then
 		assertThat(categories).hasSize(2)
-			.anyMatch(category -> category.getParent().getId() == 1);
+			.anyMatch(category -> category.getParent().getId() == 1); //N+1쿼리가 발생하지 않고 NPE발생
 	}
 }

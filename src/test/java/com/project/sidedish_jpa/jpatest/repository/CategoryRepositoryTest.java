@@ -25,6 +25,7 @@ import org.springframework.transaction.annotation.Transactional;
 //@PropertySource("classpath:application-testrun.yml")
 @TestPropertySource(properties = { "spring.config.location=classpath:application-testrun.yml" })
 @SpringBootTest
+@Transactional
 class CategoryRepositoryTest {
 
 	private static final Logger log = LoggerFactory.getLogger(CategoryRepositoryTest.class);
@@ -81,6 +82,14 @@ class CategoryRepositoryTest {
 
 		//then
 		assertThat(categories).hasSize(2)
-			.anyMatch(category -> category.getParent().getId() == 1); //N+1쿼리가 발생하지 않고 NPE발생
+			.anyMatch(category -> category.getChild().get(0).getParent().getId() == 1);
+
+		for (Category category : categories) {
+			System.out.println("^^^^" + category.toString());
+			List<Category> child = category.getChild();
+			for (Category eachChild : child) {
+				System.out.println("****"+eachChild.toString());
+			}
+		}
 	}
 }

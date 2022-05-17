@@ -37,8 +37,7 @@ public class CategoryRepository {
 		String jpql = "select p "
 			+ "from Category p "
 			+ "join p.child c "
-			+ "on p.categoryId = c.parentCategoryId "
-			+ "where p.categoryId = : parentCategoryId";
+			+ "where p.id = : parentCategoryId";
 
 		return entityManager.createQuery(jpql, Category.class)
 			.setParameter("parentCategoryId" , parentCategoryId)

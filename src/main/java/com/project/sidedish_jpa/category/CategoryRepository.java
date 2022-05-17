@@ -28,4 +28,20 @@ public class CategoryRepository {
 			.getResultList();
 	}
 
+	/**
+	 * 최상위 카테고리 id로 자식 카테고리 정보 조회
+	 * @param parentCategoryId
+	 * @return
+	 */
+	public List<Category> findSubCategoryIdByParentId(Long parentCategoryId){
+		String jpql = "select p "
+			+ "from Category p "
+			+ "join p.child c "
+			+ "on p.categoryId = c.parentCategoryId "
+			+ "where p.categoryId = : parentCategoryId";
+
+		return entityManager.createQuery(jpql, Category.class)
+			.setParameter("parentCategoryId" , parentCategoryId)
+			.getResultList();
+	}
 }

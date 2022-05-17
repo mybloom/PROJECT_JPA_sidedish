@@ -69,6 +69,18 @@ class CategoryRepositoryTest {
 		for (Category category : categoryList) {
 			System.out.println(category.toString());
 		}
+	}
 
+	@Test
+	@DisplayName("최상위 카테고리 id로 자식 카테고리 정보 조회")
+	void selectSubCategoryIdByParentId() {
+		//given
+
+		//when
+		List<Category> categories = categoryRepository.findSubCategoryIdByParentId(1L);
+
+		//then
+		assertThat(categories).hasSize(2)
+			.anyMatch(category -> category.getParent().getId() == 1);
 	}
 }

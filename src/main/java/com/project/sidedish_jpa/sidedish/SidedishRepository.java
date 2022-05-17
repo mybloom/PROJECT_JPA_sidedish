@@ -37,8 +37,8 @@ public class SidedishRepository {
 	public List<Sidedish> findAllBySubCategoryIds(List<Long> categoryIds) {
 		String jpql = "select s "
 			+ "from Sidedish s "
-			+ "join s.sidedishCategories sc "
-			+ "where sc.categoryId = :categoryIds";
+			+ "join fetch s.sidedishCategories sc "
+			+ "where sc.categoryId in :categoryIds";
 
 		return entityManager.createQuery(jpql, Sidedish.class)
 			.setParameter("categoryIds" , categoryIds)

@@ -2,8 +2,11 @@ package com.project.sidedish_jpa.jpatest.repository;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import com.project.sidedish_jpa.category.Category;
+import com.project.sidedish_jpa.category.CategoryRepository;
 import com.project.sidedish_jpa.sidedish.Sidedish;
 import com.project.sidedish_jpa.sidedish.SidedishRepository;
+import java.util.ArrayList;
 import java.util.List;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -22,6 +25,9 @@ class SidedishRepositoryTest {
 
 	@Autowired
 	SidedishRepository sidedishRepository;
+
+	@Autowired
+	CategoryRepository categoryRepository;
 
 	/**
 	 * 발생쿼리
@@ -138,5 +144,26 @@ class SidedishRepositoryTest {
 		}
 	}
 
+	@Test
+	@DisplayName("최상위 카테고리에 속한 서브카테고리 리스트를 인자로 받아 반찬목록 조회")
+	void findAllBySubCategoryIds() {
+		//given
+		List<Category> subCategories = categoryRepository.findSubCategoryIdByParentId(1L);
 
+		List<Long> childIds = new ArrayList<>();
+		for (Category category : subCategories) {
+			List<Category> children = category.getChild();
+
+			for (Category child : children) {
+				childIds.add(child.getId());
+			}
+		}
+
+		//when
+		List<Sidedish> sidedishes = sidedishRepository.findAllBySubCategoryIds(childIds);
+
+		//then
+		assertThat(sidedishes).hasSize(6)
+			.allMatch(sidedish -> sidedish.getSidedishCategories().get(0).getId() != null);
+	}
 }

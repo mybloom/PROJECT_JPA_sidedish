@@ -25,6 +25,7 @@ import org.springframework.transaction.annotation.Transactional;
 //@PropertySource("classpath:application-testrun.yml")
 @TestPropertySource(properties = { "spring.config.location=classpath:application-testrun.yml" })
 @SpringBootTest
+@Transactional
 class CategoryRepositoryTest {
 
 	private static final Logger log = LoggerFactory.getLogger(CategoryRepositoryTest.class);
@@ -69,6 +70,26 @@ class CategoryRepositoryTest {
 		for (Category category : categoryList) {
 			System.out.println(category.toString());
 		}
+	}
 
+	@Test
+	@DisplayName("최상위 카테고리 id로 자식 카테고리 정보 조회")
+	void selectSubCategoryIdByParentId() {
+		//given
+
+		//when
+		List<Category> categories = categoryRepository.findSubCategoryIdByParentId(1L);
+
+		//then
+		assertThat(categories).hasSize(1)
+			.anyMatch(category -> category.getChild().get(0).getParent().getId() == 1);
+
+		for (Category category : categories) {
+			System.out.println("^^^^" + category.toString());
+			List<Category> child = category.getChild();
+			for (Category eachChild : child) {
+				System.out.println("****"+eachChild.toString());
+			}
+		}
 	}
 }

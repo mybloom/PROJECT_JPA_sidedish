@@ -36,7 +36,8 @@ public class Category {
 	/*@OneToMany(mappedBy = "category")
 	private List<CategorySidedish> categorySidedishes = new ArrayList<>();*/
 
-	private Long sidedishId;
+	//없어져야 할 것 . private List<Long> sidedishId; 를 위해 둔것 (연관관계 매핑없이)
+//	private Long sidedishId;
 
 	@Override
 	public String toString() {

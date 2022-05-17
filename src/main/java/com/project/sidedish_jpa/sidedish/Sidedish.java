@@ -35,7 +35,8 @@ public class Sidedish {
 	private List<SidedishCategory> sidedishCategories = new ArrayList<>();
 
 	//이건 테이블 컬럼에서 빠져야 한다.  어떻게 해줘야 할까?
-	private Long categoryId;
+	//이런 식으로 해볼수도 있지 않을까?
+//	private List<Long> categoryIds;
 
 	@Override
 	public String toString() {
@@ -45,7 +46,6 @@ public class Sidedish {
 			", description='" + description + '\'' +
 			", price=" + price +
 			", stockQuantity=" + stockQuantity +
-			", categoryId=" + categoryId +
 			'}';
 	}
 }

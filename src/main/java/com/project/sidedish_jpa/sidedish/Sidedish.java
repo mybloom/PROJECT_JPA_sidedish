@@ -34,6 +34,12 @@ public class Sidedish {
 	@OneToMany(mappedBy = "sidedish")
 	private List<SidedishCategory> sidedishCategories = new ArrayList<>();
 
+	/**
+	 * sidedishEventBadege와 연관관계 맺는 거 살짝 헷갈렸고, 잊어버렸다. 내 언어로 꼭 정리해두자
+	 */
+	@OneToMany(mappedBy = "sidedish")
+	private List<SidedishEventBadge> sidedishEventBadges = new ArrayList<>();
+
 	//이건 테이블 컬럼에서 빠져야 한다.  어떻게 해줘야 할까?
 	//이런 식으로 해볼수도 있지 않을까?
 //	private List<Long> categoryIds;

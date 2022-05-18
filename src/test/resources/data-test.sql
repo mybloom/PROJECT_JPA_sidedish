@@ -1,17 +1,22 @@
 /* # category */
 /* ## 최상위 category*/
 insert into category(category_id, title, parent_category_id)
-values(1, '메인요리_테스트',null), (2, '국물요리_테스트',null),(3, '밑반찬_테스트',null);
+values (1, '메인요리_테스트', null),
+       (2, '국물요리_테스트', null),
+       (3, '밑반찬_테스트', null);
 
 /*## 하위 category*/
 insert into category(category_id, title, parent_category_id)
-values(4, '육류요리',1),(5, '해산물요리',1);
+values (4, '육류요리', 1),
+       (5, '해산물요리', 1);
 
 insert into category(category_id, title, parent_category_id)
-values(6, '국/탕/찌개',2);
+values (6, '국/탕/찌개', 2);
 
 insert into category(category_id, title, parent_category_id)
-values(7, '나물/무침',3),(8, '조림/볶음',3),(9, '절임/장아찌',3);
+values (7, '나물/무침', 3),
+       (8, '조림/볶음', 3),
+       (9, '절임/장아찌', 3);
 
 
 /*## sidedish */
@@ -69,141 +74,149 @@ VALUES (19, '무절임', '짜지 않은 아삭한 무절임', 9900, 1000);
 
 /*## Sidedish Image*/
 INSERT INTO sidedish_image (sidedish_image_id, image_sequence, image_url, sidedish_id)
-VALUES(1,1,'https://imgur.com/a/kPivzgc',1);
+VALUES (1, 1, 'https://imgur.com/a/kPivzgc', 1);
 INSERT INTO sidedish_image (sidedish_image_id, image_sequence, image_url, sidedish_id)
-VALUES(2,2,'https://imgur.com/a/kPivzgc',1);
+VALUES (2, 2, 'https://imgur.com/a/kPivzgc', 1);
 INSERT INTO sidedish_image (sidedish_image_id, image_sequence, image_url, sidedish_id)
-VALUES(3,3,'https://imgur.com/a/kPivzgc',1);
+VALUES (3, 3, 'https://imgur.com/a/kPivzgc', 1);
 INSERT INTO sidedish_image (sidedish_image_id, image_sequence, image_url, sidedish_id)
-VALUES(4,1,'https://imgur.com/a/kPivzgc',2);
+VALUES (4, 1, 'https://imgur.com/a/kPivzgc', 2);
 INSERT INTO sidedish_image (sidedish_image_id, image_sequence, image_url, sidedish_id)
-VALUES(5,2,'https://imgur.com/a/kPivzgc',2);
+VALUES (5, 2, 'https://imgur.com/a/kPivzgc', 2);
 INSERT INTO sidedish_image (sidedish_image_id, image_sequence, image_url, sidedish_id)
-VALUES(6,3,'https://imgur.com/a/kPivzgc',2);
+VALUES (6, 3, 'https://imgur.com/a/kPivzgc', 2);
 INSERT INTO sidedish_image (sidedish_image_id, image_sequence, image_url, sidedish_id)
-VALUES(7,1,'https://imgur.com/a/kPivzgc',3);
+VALUES (7, 1, 'https://imgur.com/a/kPivzgc', 3);
 INSERT INTO sidedish_image (sidedish_image_id, image_sequence, image_url, sidedish_id)
-VALUES(8,2,'https://imgur.com/a/kPivzgc',3);
+VALUES (8, 2, 'https://imgur.com/a/kPivzgc', 3);
 INSERT INTO sidedish_image (sidedish_image_id, image_sequence, image_url, sidedish_id)
-VALUES(9,3,'https://imgur.com/a/kPivzgc',3);
+VALUES (9, 3, 'https://imgur.com/a/kPivzgc', 3);
 INSERT INTO sidedish_image (sidedish_image_id, image_sequence, image_url, sidedish_id)
-VALUES(10,1,'https://imgur.com/a/kPivzgc',4);
+VALUES (10, 1, 'https://imgur.com/a/kPivzgc', 4);
 INSERT INTO sidedish_image (sidedish_image_id, image_sequence, image_url, sidedish_id)
-VALUES(11,2,'https://imgur.com/a/kPivzgc',4);
+VALUES (11, 2, 'https://imgur.com/a/kPivzgc', 4);
 INSERT INTO sidedish_image (sidedish_image_id, image_sequence, image_url, sidedish_id)
-VALUES(12,3,'https://imgur.com/a/kPivzgc',4);
+VALUES (12, 3, 'https://imgur.com/a/kPivzgc', 4);
 INSERT INTO sidedish_image (sidedish_image_id, image_sequence, image_url, sidedish_id)
-VALUES(13,1,'https://imgur.com/a/kPivzgc',5);
+VALUES (13, 1, 'https://imgur.com/a/kPivzgc', 5);
 INSERT INTO sidedish_image (sidedish_image_id, image_sequence, image_url, sidedish_id)
-VALUES(14,2,'https://imgur.com/a/kPivzgc',5);
+VALUES (14, 2, 'https://imgur.com/a/kPivzgc', 5);
 INSERT INTO sidedish_image (sidedish_image_id, image_sequence, image_url, sidedish_id)
-VALUES(15,3,'https://imgur.com/a/kPivzgc',5);
+VALUES (15, 3, 'https://imgur.com/a/kPivzgc', 5);
 INSERT INTO sidedish_image (sidedish_image_id, image_sequence, image_url, sidedish_id)
-VALUES(16,1,'https://imgur.com/a/kPivzgc',6);
+VALUES (16, 1, 'https://imgur.com/a/kPivzgc', 6);
 INSERT INTO sidedish_image (sidedish_image_id, image_sequence, image_url, sidedish_id)
-VALUES(17,2,'https://imgur.com/a/kPivzgc',6);
+VALUES (17, 2, 'https://imgur.com/a/kPivzgc', 6);
 INSERT INTO sidedish_image (sidedish_image_id, image_sequence, image_url, sidedish_id)
-VALUES(18,3,'https://imgur.com/a/kPivzgc',6);
+VALUES (18, 3, 'https://imgur.com/a/kPivzgc', 6);
 INSERT INTO sidedish_image (sidedish_image_id, image_sequence, image_url, sidedish_id)
-VALUES(19,1,'https://imgur.com/a/kPivzgc',7);
+VALUES (19, 1, 'https://imgur.com/a/kPivzgc', 7);
 INSERT INTO sidedish_image (sidedish_image_id, image_sequence, image_url, sidedish_id)
-VALUES(20,2,'https://imgur.com/a/kPivzgc',7);
+VALUES (20, 2, 'https://imgur.com/a/kPivzgc', 7);
 INSERT INTO sidedish_image (sidedish_image_id, image_sequence, image_url, sidedish_id)
-VALUES(21,3,'https://imgur.com/a/kPivzgc',7);
+VALUES (21, 3, 'https://imgur.com/a/kPivzgc', 7);
 INSERT INTO sidedish_image (sidedish_image_id, image_sequence, image_url, sidedish_id)
-VALUES(22,1,'https://imgur.com/a/kPivzgc',8);
+VALUES (22, 1, 'https://imgur.com/a/kPivzgc', 8);
 INSERT INTO sidedish_image (sidedish_image_id, image_sequence, image_url, sidedish_id)
-VALUES(23,2,'https://imgur.com/a/kPivzgc',8);
+VALUES (23, 2, 'https://imgur.com/a/kPivzgc', 8);
 INSERT INTO sidedish_image (sidedish_image_id, image_sequence, image_url, sidedish_id)
-VALUES(24,3,'https://imgur.com/a/kPivzgc',8);
+VALUES (24, 3, 'https://imgur.com/a/kPivzgc', 8);
 INSERT INTO sidedish_image (sidedish_image_id, image_sequence, image_url, sidedish_id)
-VALUES(25,1,'https://imgur.com/a/kPivzgc',9);
+VALUES (25, 1, 'https://imgur.com/a/kPivzgc', 9);
 INSERT INTO sidedish_image (sidedish_image_id, image_sequence, image_url, sidedish_id)
-VALUES(26,2,'https://imgur.com/a/kPivzgc',9);
+VALUES (26, 2, 'https://imgur.com/a/kPivzgc', 9);
 INSERT INTO sidedish_image (sidedish_image_id, image_sequence, image_url, sidedish_id)
-VALUES(27,3,'https://imgur.com/a/kPivzgc',9);
+VALUES (27, 3, 'https://imgur.com/a/kPivzgc', 9);
 INSERT INTO sidedish_image (sidedish_image_id, image_sequence, image_url, sidedish_id)
-VALUES(28,1,'https://imgur.com/a/kPivzgc',10);
+VALUES (28, 1, 'https://imgur.com/a/kPivzgc', 10);
 INSERT INTO sidedish_image (sidedish_image_id, image_sequence, image_url, sidedish_id)
-VALUES(29,2,'https://imgur.com/a/kPivzgc',10);
+VALUES (29, 2, 'https://imgur.com/a/kPivzgc', 10);
 INSERT INTO sidedish_image (sidedish_image_id, image_sequence, image_url, sidedish_id)
-VALUES(30,3,'https://imgur.com/a/kPivzgc',10);
+VALUES (30, 3, 'https://imgur.com/a/kPivzgc', 10);
 INSERT INTO sidedish_image (sidedish_image_id, image_sequence, image_url, sidedish_id)
-VALUES(31,1,'https://imgur.com/a/kPivzgc',11);
+VALUES (31, 1, 'https://imgur.com/a/kPivzgc', 11);
 INSERT INTO sidedish_image (sidedish_image_id, image_sequence, image_url, sidedish_id)
-VALUES(32,2,'https://imgur.com/a/kPivzgc',11);
+VALUES (32, 2, 'https://imgur.com/a/kPivzgc', 11);
 INSERT INTO sidedish_image (sidedish_image_id, image_sequence, image_url, sidedish_id)
-VALUES(33,3,'https://imgur.com/a/kPivzgc',11);
+VALUES (33, 3, 'https://imgur.com/a/kPivzgc', 11);
 INSERT INTO sidedish_image (sidedish_image_id, image_sequence, image_url, sidedish_id)
-VALUES(34,1,'https://imgur.com/a/kPivzgc',12);
+VALUES (34, 1, 'https://imgur.com/a/kPivzgc', 12);
 INSERT INTO sidedish_image (sidedish_image_id, image_sequence, image_url, sidedish_id)
-VALUES(35,2,'https://imgur.com/a/kPivzgc',12);
+VALUES (35, 2, 'https://imgur.com/a/kPivzgc', 12);
 INSERT INTO sidedish_image (sidedish_image_id, image_sequence, image_url, sidedish_id)
-VALUES(36,3,'https://imgur.com/a/kPivzgc',12);
+VALUES (36, 3, 'https://imgur.com/a/kPivzgc', 12);
 INSERT INTO sidedish_image (sidedish_image_id, image_sequence, image_url, sidedish_id)
-VALUES(37,1,'https://imgur.com/a/kPivzgc',13);
+VALUES (37, 1, 'https://imgur.com/a/kPivzgc', 13);
 INSERT INTO sidedish_image (sidedish_image_id, image_sequence, image_url, sidedish_id)
-VALUES(38,2,'https://imgur.com/a/kPivzgc',13);
+VALUES (38, 2, 'https://imgur.com/a/kPivzgc', 13);
 INSERT INTO sidedish_image (sidedish_image_id, image_sequence, image_url, sidedish_id)
-VALUES(39,3,'https://imgur.com/a/kPivzgc',13);
+VALUES (39, 3, 'https://imgur.com/a/kPivzgc', 13);
 INSERT INTO sidedish_image (sidedish_image_id, image_sequence, image_url, sidedish_id)
-VALUES(40,1,'https://imgur.com/a/kPivzgc',14);
+VALUES (40, 1, 'https://imgur.com/a/kPivzgc', 14);
 INSERT INTO sidedish_image (sidedish_image_id, image_sequence, image_url, sidedish_id)
-VALUES(41,2,'https://imgur.com/a/kPivzgc',14);
+VALUES (41, 2, 'https://imgur.com/a/kPivzgc', 14);
 INSERT INTO sidedish_image (sidedish_image_id, image_sequence, image_url, sidedish_id)
-VALUES(42,3,'https://imgur.com/a/kPivzgc',14);
+VALUES (42, 3, 'https://imgur.com/a/kPivzgc', 14);
 INSERT INTO sidedish_image (sidedish_image_id, image_sequence, image_url, sidedish_id)
-VALUES(43,1,'https://imgur.com/a/kPivzgc',15);
+VALUES (43, 1, 'https://imgur.com/a/kPivzgc', 15);
 INSERT INTO sidedish_image (sidedish_image_id, image_sequence, image_url, sidedish_id)
-VALUES(44,2,'https://imgur.com/a/kPivzgc',15);
+VALUES (44, 2, 'https://imgur.com/a/kPivzgc', 15);
 INSERT INTO sidedish_image (sidedish_image_id, image_sequence, image_url, sidedish_id)
-VALUES(45,3,'https://imgur.com/a/kPivzgc',15);
+VALUES (45, 3, 'https://imgur.com/a/kPivzgc', 15);
 INSERT INTO sidedish_image (sidedish_image_id, image_sequence, image_url, sidedish_id)
-VALUES(46,1,'https://imgur.com/a/kPivzgc',16);
+VALUES (46, 1, 'https://imgur.com/a/kPivzgc', 16);
 INSERT INTO sidedish_image (sidedish_image_id, image_sequence, image_url, sidedish_id)
-VALUES(47,2,'https://imgur.com/a/kPivzgc',16);
+VALUES (47, 2, 'https://imgur.com/a/kPivzgc', 16);
 INSERT INTO sidedish_image (sidedish_image_id, image_sequence, image_url, sidedish_id)
-VALUES(48,3,'https://imgur.com/a/kPivzgc',16);
+VALUES (48, 3, 'https://imgur.com/a/kPivzgc', 16);
 INSERT INTO sidedish_image (sidedish_image_id, image_sequence, image_url, sidedish_id)
-VALUES(49,1,'https://imgur.com/a/kPivzgc',17);
+VALUES (49, 1, 'https://imgur.com/a/kPivzgc', 17);
 INSERT INTO sidedish_image (sidedish_image_id, image_sequence, image_url, sidedish_id)
-VALUES(50,2,'https://imgur.com/a/kPivzgc',17);
+VALUES (50, 2, 'https://imgur.com/a/kPivzgc', 17);
 INSERT INTO sidedish_image (sidedish_image_id, image_sequence, image_url, sidedish_id)
-VALUES(51,3,'https://imgur.com/a/kPivzgc',17);
+VALUES (51, 3, 'https://imgur.com/a/kPivzgc', 17);
 INSERT INTO sidedish_image (sidedish_image_id, image_sequence, image_url, sidedish_id)
-VALUES(52,1,'https://imgur.com/a/kPivzgc',18);
+VALUES (52, 1, 'https://imgur.com/a/kPivzgc', 18);
 INSERT INTO sidedish_image (sidedish_image_id, image_sequence, image_url, sidedish_id)
-VALUES(53,2,'https://imgur.com/a/kPivzgc',18);
+VALUES (53, 2, 'https://imgur.com/a/kPivzgc', 18);
 INSERT INTO sidedish_image (sidedish_image_id, image_sequence, image_url, sidedish_id)
-VALUES(54,3,'https://imgur.com/a/kPivzgc',18);
+VALUES (54, 3, 'https://imgur.com/a/kPivzgc', 18);
 INSERT INTO sidedish_image (sidedish_image_id, image_sequence, image_url, sidedish_id)
-VALUES(55,1,'https://imgur.com/a/kPivzgc',19);
+VALUES (55, 1, 'https://imgur.com/a/kPivzgc', 19);
 INSERT INTO sidedish_image (sidedish_image_id, image_sequence, image_url, sidedish_id)
-VALUES(56,2,'https://imgur.com/a/kPivzgc',19);
+VALUES (56, 2, 'https://imgur.com/a/kPivzgc', 19);
 INSERT INTO sidedish_image (sidedish_image_id, image_sequence, image_url, sidedish_id)
-VALUES(57,3,'https://imgur.com/a/kPivzgc',19);
+VALUES (57, 3, 'https://imgur.com/a/kPivzgc', 19);
 
 /*## Sidedish_Category*/
 INSERT INTO sidedish_category (sidedish_category_id, category_id, sidedish_id)
-VALUES
-    (1,4,1),
-    (2,4,2),
-    (3,4,3),
-    (4,4,4),
-    (5,5,5),
-    (6,5,6),
-    (7,6,7),
-    (8,6,8),
-    (9,6,9),
-    (10,6,10),
-    (11,7,11),
-    (12,7,12),
-    (13,7,13),
-    (14,8,14),
-    (15,8,15),
-    (16,8,16),
-    (17,9,17),
-    (18,9,18),
-    (19,9,19);
+VALUES (1, 4, 1),
+       (2, 4, 2),
+       (3, 4, 3),
+       (4, 4, 4),
+       (5, 5, 5),
+       (6, 5, 6),
+       (7, 6, 7),
+       (8, 6, 8),
+       (9, 6, 9),
+       (10, 6, 10),
+       (11, 7, 11),
+       (12, 7, 12),
+       (13, 7, 13),
+       (14, 8, 14),
+       (15, 8, 15),
+       (16, 8, 16),
+       (17, 9, 17),
+       (18, 9, 18),
+       (19, 9, 19);
 
+/* EventBadge */
+INSERT INTO event_badge(event_badge_id, name, discount_rate, apply_start_date, apply_end_date)
+VALUES (1, '런칭특가', 0.1, '2022-5-9', '2022-5-18');
+INSERT INTO event_badge(event_badge_id, name, discount_rate, apply_start_date, apply_end_date)
+VALUES (2, '여름특가', 0.2, '2022-5-18', '2022-5-21');
 
+INSERT INTO sidedish_event_badge(sidedish_event_badge_id, event_badge_id, sidedish_id)
+VALUES (1,1,1),(2,1,2),(3,1,6),(4,1,10),(5,1,12),(6,1,14),(7,1,17);
+INSERT INTO sidedish_event_badge(sidedish_event_badge_id, event_badge_id, sidedish_id)
+VALUES (8,2,1),(9,2,6),(10,2,17),(11,2,3),(12,2,13),(13,2,18),(14,2,19);

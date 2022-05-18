@@ -209,4 +209,13 @@ VALUES
     (18,9,18),
     (19,9,19);
 
+/* EventBadge */
+INSERT INTO event_badge(event_badge_id, name, discount_rate, apply_start_date, apply_end_date)
+VALUES (1, '런칭특가', 0.1, '2022-5-9', '2022-5-18');
+INSERT INTO event_badge(event_badge_id, name, discount_rate, apply_start_date, apply_end_date)
+VALUES (2, '여름특가', 0.2, '2022-5-18', '2022-5-21');
 
+INSERT INTO sidedish_event_badge(sidedish_event_badge_id, event_badge_id, sidedish_id)
+VALUES (1,1,1),(2,1,2),(3,1,6),(4,1,10),(5,1,12),(6,1,14),(7,1,17);
+INSERT INTO sidedish_event_badge(sidedish_event_badge_id, event_badge_id, sidedish_id)
+VALUES (8,2,1),(9,2,6),(10,2,17),(11,2,3),(12,2,13),(13,2,18),(14,2,19);

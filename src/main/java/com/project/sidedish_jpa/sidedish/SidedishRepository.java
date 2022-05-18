@@ -11,10 +11,15 @@ public class SidedishRepository {
 
 	private final EntityManager entityManager;
 
+	/**
+	 * 서브 카테고리를 1개를 인자로 받아 반찬목록 조회
+	 * @param categoryId
+	 * @return
+	 */
 	public List<Sidedish> findAllBySubCategoryId(Long categoryId) {
 		String jpql = "select s "
 			+ "from Sidedish s "
-			+ "join s.sidedishCategories sc "
+			+ "join fetch s.sidedishCategories sc "
 			+ "where sc.categoryId = :categoryId";
 
 		return entityManager.createQuery(jpql, Sidedish.class)

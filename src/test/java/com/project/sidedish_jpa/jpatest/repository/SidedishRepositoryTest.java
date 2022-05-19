@@ -166,4 +166,17 @@ class SidedishRepositoryTest {
 		assertThat(sidedishes).hasSize(6)
 			.allMatch(sidedish -> sidedish.getSidedishCategories().get(0).getId() != null);
 	}
+
+	@Test
+	@DisplayName("기존 repository 쿼리를 조회 하고, 객체 그래프 탐색 시 반찬 이벤트 배지 조회 여부 확인")
+	void findAllBySidedishList() {
+		//given
+
+		//when
+		List<Sidedish> sidedishes = sidedishRepository.findAllBySubCategoryId(1L);
+
+		//then
+
+	}
+
 }

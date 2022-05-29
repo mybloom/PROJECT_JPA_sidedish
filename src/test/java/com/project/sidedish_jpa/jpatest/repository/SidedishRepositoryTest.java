@@ -62,26 +62,26 @@ class SidedishRepositoryTest {
 	 *         sidedishca0_.sidedish_id=?
 	 * </p>
 	 */
-	@Test
-	@DisplayName("SidedishCategory 테이블 전체내용 조회_SidedishCategory 엔티티 객체 그래프 탐색이 잘되는 지 확인하기 위한")
-	void selectSidedishCategoryAll() {
-		//given
-
-		//when
-		List<Sidedish> sidedishes = sidedishRepository.findAll();
-
-		//then
-		assertThat(sidedishes).hasSize(19)
-			.anyMatch(sidedish -> sidedish.getSidedishCategories().get(0).getCategoryId() != null);
-
-//		for (Sidedish sidedish : sidedishes) {
-//			System.out.println("^^^^" + sidedish.toString());
-//			List<SidedishCategory> sidedishCategories = sidedish.getSidedishCategories();
-//			for (SidedishCategory sidedishCategory : sidedishCategories) {
-//				System.out.println("****"+ sidedishCategory.toString());
-//			}
-//		}
-	}
+//	@Test
+//	@DisplayName("SidedishCategory 테이블 전체내용 조회_SidedishCategory 엔티티 객체 그래프 탐색이 잘되는 지 확인하기 위한")
+//	void selectSidedishCategoryAll() {
+//		//given
+//
+//		//when
+//		List<Sidedish> sidedishes = sidedishRepository.findAll();
+//
+//		//then
+//		assertThat(sidedishes).hasSize(19)
+//			.anyMatch(sidedish -> sidedish.getSidedishCategories().get(0).getCategoryId() != null);
+//
+////		for (Sidedish sidedish : sidedishes) {
+////			System.out.println("^^^^" + sidedish.toString());
+////			List<SidedishCategory> sidedishCategories = sidedish.getSidedishCategories();
+////			for (SidedishCategory sidedishCategory : sidedishCategories) {
+////				System.out.println("****"+ sidedishCategory.toString());
+////			}
+////		}
+//	}
 
 	/**
 	 * 발생쿼리 와 특이한 점 : N+1 쿼리 발생 
@@ -167,16 +167,16 @@ class SidedishRepositoryTest {
 			.allMatch(sidedish -> sidedish.getSidedishCategories().get(0).getId() != null);
 	}
 
-	@Test
-	@DisplayName("기존 repository 쿼리를 조회 하고, 객체 그래프 탐색 시 반찬 이벤트 배지 조회 여부 확인")
-	void findAllBySidedishList() {
-		//given
-
-		//when
-		List<Sidedish> sidedishes = sidedishRepository.findAllBySubCategoryId(1L);
-
-		//then
-
-	}
+//	@Test
+//	@DisplayName("기존 repository 쿼리를 조회 하고, 객체 그래프 탐색 시 반찬 이벤트 배지 조회 여부 확인")
+//	void findAllBySidedishList() {
+//		//given
+//
+//		//when
+//		List<Sidedish> sidedishes = sidedishRepository.findAllBySubCategoryId(1L);
+//
+//		//then
+//
+//	}
 
 }
